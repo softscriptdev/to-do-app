@@ -1,0 +1,16 @@
+@use "./var.module.scss" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: $light-background;
+    transition: 500ms all;
+
+    &.dark {
+        background: $dark-background;
+    }
+}
