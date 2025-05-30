@@ -24,7 +24,7 @@ export default function ShowToDo({ todos, setnewtodolist }) {
   return (
     <article className={style.todolist}>
       {todos.map(([todo, done], index) => (
-        <div key={index} className={done && style.isdone}>
+        <div key={index} className={done ? style.isdone : null}>
           <FontAwesomeIcon
             icon={done ? faSquareCheck : faSquare}
             size="xl"
