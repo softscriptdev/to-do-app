@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import CreateToDo from "./Header";
+import ShowToDo from "./ShowToDo";
 
 export default function ToDoApp() {
   const [gettodos, addtodos] = useState([]);
@@ -16,6 +17,7 @@ export default function ToDoApp() {
   return (
     <article>
       <CreateToDo addtodo={addtodo} />
+      <ShowToDo todos={gettodos} />
     </article>
   );
 }

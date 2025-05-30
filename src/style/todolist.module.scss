@@ -1,0 +1,19 @@
+@use "./var.module.scss" as *;
+
+.todolist {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  color: $light-text;
+  background: rgb($light-primary, 0.2);
+  border: rgb($light-primary, 0.5) 2px solid;
+
+  div {
+    padding-block: 0.5rem;
+    font-size: 1rem;
+
+    &:not(:last-of-type) {
+      border-bottom: 2px solid red;
+    }
+  }
+}
