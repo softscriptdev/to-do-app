@@ -1,0 +1,49 @@
+@use "./var.module.scss" as *;
+
+header {
+  padding: 1rem;
+  border-radius: 1rem;
+  color: $light-text;
+  background: rgb($light-primary, 0.2);
+  border: rgb($light-primary, 0.5) 2px solid;
+  display: flex;
+  justify-content: space-between;
+
+  svg {
+    transition: 500ms all;
+    cursor: pointer;
+  }
+}
+
+.creattodo {
+  margin-block: 0.5rem 1rem;
+  padding: 0.75rem;
+  height: 50px;
+  border-radius: 1rem;
+  color: $light-text;
+  background: rgb($light-primary, 0.2);
+  border: rgb($light-primary, 0.5) 2px solid;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 20px;
+  gap: 0.5rem;
+
+  svg {
+    cursor: pointer;
+  }
+
+  input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 1.5rem;
+    color: rgb($light-text, .75);
+
+    &::placeholder {
+      color: #fcfcfc;
+      font-weight: bolder;
+    }
+  }
+}

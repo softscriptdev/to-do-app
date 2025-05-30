@@ -1,16 +1,22 @@
 @use "./var.module.scss" as *;
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background: $light-background;
-    transition: 500ms all;
+  background: $light-background;
+  transition: 500ms all;
+  margin: 0 auto;
+  max-width: min(1000px, calc(100dvw - 1rem));
 
-    &.dark {
-        background: $dark-background;
-    }
+  &.dark {
+    background: $dark-background;
+  }
+
+  #root {
+    margin-top: 5rem;
+  }
 }
