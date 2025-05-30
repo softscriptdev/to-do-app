@@ -19,10 +19,17 @@ export default function ToDoApp() {
     addtodos((prev) => [...prev, [todo, false]]);
   };
 
+  /* NOTE create a new to-do list after manipulation */
+  const setnewtodolist = (newtodolist) => {
+    addtodos(newtodolist);
+  };
+
   return (
     <article>
       <CreateToDo addtodo={addtodo} />
-      <ShowToDo todos={gettodos} />
+      {gettodos.length > 0 && (
+        <ShowToDo todos={gettodos} setnewtodolist={setnewtodolist} />
+      )}
     </article>
   );
 }
