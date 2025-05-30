@@ -2,13 +2,13 @@
 
 .togglestyle {
     position: absolute;
-    right: -2px;
-    top: -2px;
+    right: 0px;
+    top: 0px;
     padding: .5rem;
     cursor: pointer;
     border-left: solid $light-primary 3px;
     border-bottom: solid $light-primary 3px;
-    border-radius: .5rem;
+    border-radius: 0 0 0 .5rem;
     width: 30px;
     aspect-ratio: 1 / 1;
     background: rgb($light-primary,.5) ;
