@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import style from "../style/CreateToDo.module.scss";
 import { faPlus, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { faSquarePlus } from "@fortawesome/free-regular-svg-icons";
 
 export default function CreateToDo({ addtodo }) {
@@ -9,6 +9,16 @@ export default function CreateToDo({ addtodo }) {
   const [create, changecreate] = useState(false);
   /* NOTE current To Do in the input to create a new todo */
   const [newtodo, changetodo] = useState(null);
+
+  /* NOTE inital focus on the input to create a new todo */
+  const inputref = useRef(null);
+
+  /* NOTE  if create is true focus on the input to create a new todo */
+  useEffect(() => {
+    if (create) {
+      inputref.current.focus();
+    }
+  }, [create]);
 
   /* NOTE check current to do and add it to the todo list */
   const checknewtodo = () => {
@@ -40,6 +50,7 @@ export default function CreateToDo({ addtodo }) {
             type="text"
             onChange={(e) => changetodo(e.target.value.trim())}
             placeholder="My new task ..."
+            ref={inputref}
           />
           <FontAwesomeIcon
             icon={faSquarePlus}
