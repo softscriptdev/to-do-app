@@ -15,8 +15,6 @@
     grid-template-columns: 50px 1fr 50px;
 
     &.isdone {
-      opacity: 0.5;
-
       p {
         position: relative;
         padding-right: 1.5rem;
@@ -32,6 +30,11 @@
           top: 50%;
           translate: 0 -50%;
           color: rgb(var(--primary-color));
+        }
+
+        &,
+        svg {
+          opacity: 0.5;
         }
       }
     }
