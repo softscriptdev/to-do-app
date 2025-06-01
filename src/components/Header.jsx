@@ -1,34 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import style from "../style/CreateToDo.module.scss";
 import { faPlus, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useRef, useState } from "react";
-import { faSquarePlus } from "@fortawesome/free-regular-svg-icons";
+import { useState } from "react";
+import CreateNewToDo from "./CreateNewToDo";
 
 export default function CreateToDo({ addtodo }) {
   /* NOTE state to show or hide create todo */
   const [create, changecreate] = useState(false);
-  /* NOTE current To Do in the input to create a new todo */
-  const [newtodo, changetodo] = useState(null);
-
-  /* NOTE inital focus on the input to create a new todo */
-  const inputref = useRef(null);
-
-  /* NOTE  if create is true focus on the input to create a new todo */
-  useEffect(() => {
-    if (create) {
-      inputref.current.focus();
-    }
-  }, [create]);
-
-  /* NOTE check current to do and add it to the todo list */
-  const checknewtodo = () => {
-    let todo = newtodo?.trim();
-    if (todo) {
-      addtodo(todo);
-      changetodo(null);
-      changecreate(false);
-    }
-  };
 
   return (
     <>
@@ -45,20 +23,12 @@ export default function CreateToDo({ addtodo }) {
 
       {/* NOTE create a new todo */}
       {create && (
-        <div className={style.creattodo}>
-          <input
-            type="text"
-            onChange={(e) => changetodo(e.target.value.trim())}
-            placeholder="My new task ..."
-            ref={inputref}
-          />
-          <FontAwesomeIcon
-            icon={faSquarePlus}
-            size="xl"
-            color="#d85757"
-            onClick={checknewtodo}
-          />
-        </div>
+        <CreateNewToDo
+          style={style.creattodo}
+          addtodo={addtodo}
+          changecreate={changecreate}
+          create
+        />
       )}
     </>
   );
