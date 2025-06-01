@@ -1,12 +1,42 @@
-# React + Vite
+# To Do app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## The To Do app
 
-Currently, two official plugins are available:
+This is a simple to-do app. To-dos are saved in local storage and always loaded from there (no synchronization between multiple devices). To-dos can be created, marked as completed, and deleted. Two themes are available: light and dark.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## So you can clone the project
 
-## Expanding the ESLint configuration
+- First you copy the github download link
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+git clone https://github.com/DigitaleWeltLibrary/to-do-app
+```
+
+- Then you have cloned the repository in your directory
+- After that you have to install the node packages
+
+```bash
+npm install
+```
+
+- you are ready to start the app
+
+```bash
+npm run dev
+```
+
+## Used techniques
+
+- vite
+- react
+- FontAwesomeIcon
+
+## Themes
+
+### Light theme
+
+![alt text](assets/lighttheme.png)
+
+### Dark theme
+
+![alt text](assets/darktheme.png)
