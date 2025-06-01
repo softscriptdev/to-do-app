@@ -1,27 +1,20 @@
-@use './var.module.scss' as *;
+@use "./var.module.scss" as *;
 
 .togglestyle {
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    padding: .5rem;
-    cursor: pointer;
-    border-left: solid $light-primary 3px;
-    border-bottom: solid $light-primary 3px;
-    border-radius: 0 0 0 .5rem;
-    width: 30px;
-    aspect-ratio: 1 / 1;
-    background: rgb($light-primary,.5) ;
-    transition: 500ms all;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-left: solid var(--primary-color) 3px;
+  border-bottom: solid var(--primary-color) 3px;
+  border-radius: 0 0 0 0.5rem;
+  width: 30px;
+  aspect-ratio: 1 / 1;
+  background-color: rgba(var(--primary-color), 0.5);
+  transition: 500ms all;
 
-    &:has(body.dark) {
-        background: $dark-primary;
-        border-color: $dark-primary;
-    }
-
-
-
-    &:hover {
-        size: 0.1;
-    }
+  &:hover {
+    size: 0.1;
+  }
 }

@@ -3,9 +3,9 @@
 header {
   padding: 1rem;
   border-radius: 1rem;
-  color: $light-text;
-  background: rgb($light-primary, 0.2);
-  border: rgb($light-primary, 0.5) 2px solid;
+  color: rgb(var(--text-color));
+  background: rgb(var(--primary-color), 0.2);
+  border: rgb(var(--primary-color), 0.5) 2px solid;
   display: flex;
   justify-content: space-between;
 
@@ -20,9 +20,9 @@ header {
   padding: 0.75rem;
   height: 50px;
   border-radius: 1rem;
-  color: $light-text;
-  background: rgb($light-primary, 0.2);
-  border: rgb($light-primary, 0.5) 2px solid;
+  color: rgb(var(--text-color));
+  background: rgb(var(--primary-color), 0.2);
+  border: rgb(var(--primary-color), 0.5) 2px solid;
   display: grid;
   align-items: center;
   grid-template-columns: 1fr 20px;
@@ -39,11 +39,12 @@ header {
     background: transparent;
     outline: none;
     font-size: 1.5rem;
-    color: rgb($light-text, .75);
+    color: rgb(var(--text-color), 0.75);
 
     &::placeholder {
       color: #fcfcfc;
-      font-weight: bolder;
+      font-weight: lighter;
+      opacity: .5;
     }
   }
 }

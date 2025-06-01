@@ -1,10 +1,11 @@
-$dark-background: #1c2b2d;
-$dark-text: #e0e7e9;
-$dark-primary: #f28482;
-$dark-shadow: rgba(0, 0, 0, 0.7);
+:root {
+  --background-color: 252, 252, 252;
+  --text-color: 63, 76, 77;
+  --primary-color: 216, 87, 87;
+}
 
-
-$light-background: #fcfcfc;
-$light-text: #3f4c4d;
-$light-primary: #d85757;
-$light-shadow: rgba(0, 0, 0, 0.15);
+body.dark {
+  --background-color: 51, 51, 51;
+  --text-color: 224, 231, 233;
+  --primary-color: 255, 255, 255;
+}
