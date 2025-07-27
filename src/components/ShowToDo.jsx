@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import style from "../style/todolist.module.scss";
 import {
+  faCheck,
   faSquare,
   faSquareCheck,
   faTrash,
@@ -25,18 +26,26 @@ export default function ShowToDo({ todos, setnewtodolist }) {
     <article className={style.todolist}>
       {todos.map(([todo, done], index) => (
         <div key={index} className={done ? style.isdone : null}>
-          <FontAwesomeIcon
-            icon={done ? faSquareCheck : faSquare}
-            size="xl"
-            color="#d85757"
+          <div
             onClick={() => changedone(index)}
-          />
-          <p>{todo}</p>
+            className={done ? style.done : null}
+          >
+            {done && <FontAwesomeIcon icon={faCheck} />}
+          </div>
+
+          <p className={done && style.textdone}>{todo}</p>
+
+          {done ? (
+            <FontAwesomeIcon className={style.check} icon={faCheck} />
+          ) : (
+            <div></div>
+          )}
+
           <FontAwesomeIcon
             icon={faTrash}
             size="xl"
-            color="#d85757"
             onClick={() => deltodo(index)}
+            className={style.trash}
           />
         </div>
       ))}
