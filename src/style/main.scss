@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: rgb(var(--background-color));
+  background-color: hsl(var(--background));
   transition: 500ms all;
   margin: 0 auto;
   max-width: min(1000px, calc(100dvw - 1rem));
