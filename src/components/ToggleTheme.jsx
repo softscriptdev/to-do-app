@@ -2,8 +2,6 @@ import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 
-import style from "../style/ToggleTheme.module.scss";
-
 export default function ToggleTheme() {
   /* NOTE set body to theme */
   const setbodytheme = (theme) => {
@@ -26,7 +24,6 @@ export default function ToggleTheme() {
 
   return (
     <FontAwesomeIcon
-      className={style.togglestyle}
       size="xl"
       icon={gettheme === "dark" ? faSun : faMoon}
       color={gettheme === "dark" ? "#e0e7e9" : "#3f4c4d"}

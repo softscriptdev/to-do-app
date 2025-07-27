@@ -6,12 +6,16 @@ header {
   color: rgb(var(--text-color));
   background: rgb(var(--primary-color), 0.2);
   border: rgb(var(--primary-color), 0.5) 2px solid;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 50px 50px;
 
   svg {
     transition: 500ms all;
     cursor: pointer;
+    display: block;
+    margin: auto;
+
+
   }
 }
 
@@ -44,7 +48,7 @@ header {
     &::placeholder {
       color: #fcfcfc;
       font-weight: lighter;
-      opacity: .5;
+      opacity: 0.5;
     }
   }
 }

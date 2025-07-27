@@ -3,6 +3,7 @@ import style from "../style/CreateToDo.module.scss";
 import { faPlus, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import CreateNewToDo from "./CreateNewToDo";
+import ToggleTheme from "./ToggleTheme";
 
 export default function CreateToDo({ addtodo }) {
   /* NOTE state to show or hide create todo */
@@ -13,6 +14,7 @@ export default function CreateToDo({ addtodo }) {
       {/* NOTE header with btn to create a new todo */}
       <header className={style.header}>
         <h1>My Tasks</h1>
+        <ToggleTheme />
         <FontAwesomeIcon
           icon={create ? faXmark : faPlus}
           size="xl"
