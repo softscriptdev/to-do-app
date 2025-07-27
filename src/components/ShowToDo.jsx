@@ -30,10 +30,10 @@ export default function ShowToDo({ todos, setnewtodolist }) {
             onClick={() => changedone(index)}
             className={done ? style.done : null}
           >
-            {done && <FontAwesomeIcon icon={faCheck} />}
+            {done ? <FontAwesomeIcon icon={faCheck} /> : null}
           </div>
 
-          <p className={done && style.textdone}>{todo}</p>
+          <p className={done ? style.textdone : null}>{todo}</p>
 
           {done ? (
             <FontAwesomeIcon className={style.check} icon={faCheck} />
