@@ -40,3 +40,8 @@ npm run dev
 ### Dark theme
 
 ![alt text](assets/darktheme.png)
+
+## Version
+V1.0: functionality and UI
+
+V2.0: new UI design with To Do status
