@@ -13,26 +13,27 @@ export default function CreateToDo({ addtodo }) {
     <>
       {/* NOTE header with btn to create a new todo */}
       <header className={style.header}>
-        <h1>My Tasks</h1>
-        <ToggleTheme style={style} />
-        <div className={style.add}>
-          <FontAwesomeIcon
-            icon={create ? faXmark : faPlus}
-            size="xl"
-            onClick={() => changecreate((prev) => !prev)}
+        <section>
+          <h1>My Tasks</h1>
+          <ToggleTheme style={style} />
+          <div className={style.add}>
+            <FontAwesomeIcon
+              icon={create ? faXmark : faPlus}
+              size="xl"
+              onClick={() => changecreate((prev) => !prev)}
+            />
+          </div>
+        </section>
+        {/* NOTE create a new todo */}
+        {create && (
+          <CreateNewToDo
+            style={style.creattodo}
+            addtodo={addtodo}
+            changecreate={changecreate}
+            create
           />
-        </div>
+        )}
       </header>
-
-      {/* NOTE create a new todo */}
-      {create && (
-        <CreateNewToDo
-          style={style.creattodo}
-          addtodo={addtodo}
-          changecreate={changecreate}
-          create
-        />
-      )}
     </>
   );
 }

@@ -1,5 +1,3 @@
-import { faSquarePlus } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useRef, useState } from "react";
 
 export default function CreateNewToDo({
@@ -39,12 +37,10 @@ export default function CreateNewToDo({
         placeholder="My new task ..."
         ref={inputref}
       />
-      <FontAwesomeIcon
-        icon={faSquarePlus}
-        size="xl"
-        color="#d85757"
-        onClick={checknewtodo}
-      />
+      <button
+       onClick={checknewtodo}
+       disabled={!newtodo}
+       >Add</button>
     </div>
   );
 }

@@ -5,37 +5,79 @@ header {
   border-radius: 1rem;
   border: hsl(var(--border)) 2px solid;
   background-color: hsl(var(--card));
-  display: grid;
-  grid-template-columns: 1fr 50px 50px;
-  align-items: center;
+  section {
+    display: grid;
+    grid-template-columns: 1fr 50px 50px;
+    align-items: center;
 
-  h1 {
-    color: hsl(var(--foreground));
+    h1 {
+      color: hsl(var(--foreground));
+      font-size: 1.5rem;
+    }
+
+    div {
+      margin: auto;
+      transition: 500ms all;
+      cursor: pointer;
+      display: block;
+      padding: 0.5rem;
+      border: 1px solid hsl(var(--border));
+      border-radius: 100%;
+      aspect-ratio: 1 / 1;
+      width: 40px;
+
+      &:hover {
+        background-color: hsl(var(--accent));
+        &.add {
+          background-color: hsl(var(--green)) !important;
+        }
+      }
+      svg {
+        transition: 500ms all;
+        display: block;
+        margin: auto;
+        color: var(--icon);
+        transition: 500ms all;
+      }
+    }
   }
 
   div {
-    margin: auto;
-    transition: 500ms all;
-    cursor: pointer;
-    display: block;
-    padding: 0.5rem;
-    border: 1px solid hsl(var(--border));
-    border-radius: 100%;
-    aspect-ratio: 1 / 1;
-    width: 40px;
+    margin-top: 0.75rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 70px;
+    gap: 0.25rem;
 
-    &:hover {
-      background-color: hsl(var(--accent));
-      &.add {
-        background-color: hsl(var(--green)) !important;
+    input,
+    button {
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+    }
+
+    button {
+      background: hsl(var(--green));
+      border: solid hsl(var(--border)) 1px;
+      cursor: pointer;
+      opacity: 0.85;
+      transition: 500ms all;
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      &:hover:not(:disabled) {
+        opacity: 1;
       }
     }
-    svg {
-      transition: 500ms all;
-      display: block;
-      margin: auto;
+
+    input {
+      outline: none;
+      border: hsl(var(--input)) 1px solid;
+      background-color: hsl(var(--background));
+      font-size: 1.25rem;
       color: var(--icon);
-      transition: 500ms all;
     }
   }
 }
