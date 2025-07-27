@@ -1,0 +1,21 @@
+.status {
+  margin-top: 1.5rem;
+  border: dotted 2px hsl(var(--border));
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background: hsl(var(--card));
+
+  p {
+    text-align: center;
+    color: hsl(var(--foreground));
+  }
+
+  div {
+    text-align: center;
+    svg {
+      height: 50px;
+      margin-bottom: 0.5rem;
+      color: var(--icon);
+    }
+  }
+}

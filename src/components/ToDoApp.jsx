@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import CreateToDo from "./Header";
 import ShowToDo from "./ShowToDo";
+import TuDoStatus from "./TuDoStatus";
 
 export default function ToDoApp() {
   /* NOTE set state for to dos | get to dos from local storage */
@@ -30,6 +31,8 @@ export default function ToDoApp() {
       {gettodos.length > 0 && (
         <ShowToDo todos={gettodos} setnewtodolist={setnewtodolist} />
       )}
+
+      <TuDoStatus todos={gettodos} />
     </article>
   );
 }
