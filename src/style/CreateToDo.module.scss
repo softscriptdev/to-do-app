@@ -3,23 +3,44 @@
 header {
   padding: 1rem;
   border-radius: 1rem;
-  color: rgb(var(--text-color));
-  background: rgb(var(--primary-color), 0.2);
-  border: rgb(var(--primary-color), 0.5) 2px solid;
+  border: hsl(var(--border)) 2px solid;
+  background-color: hsl(var(--card));
   display: grid;
   grid-template-columns: 1fr 50px 50px;
+  align-items: center;
 
-  svg {
+  h1 {
+    color: hsl(var(--foreground));
+  }
+
+  div {
+    margin: auto;
     transition: 500ms all;
     cursor: pointer;
     display: block;
-    margin: auto;
+    padding: 0.5rem;
+    border: 1px solid hsl(var(--border));
+    border-radius: 100%;
+    aspect-ratio: 1 / 1;
+    width: 40px;
 
-
+    &:hover {
+      background-color: hsl(var(--accent));
+      &.add {
+        background-color: hsl(var(--green)) !important;
+      }
+    }
+    svg {
+      transition: 500ms all;
+      display: block;
+      margin: auto;
+      color: var(--icon);
+      transition: 500ms all;
+    }
   }
 }
 
-.creattodo {
+/* .creattodo {
   margin-block: 0.5rem 1rem;
   padding: 0.75rem;
   height: 50px;
@@ -52,3 +73,4 @@ header {
     }
   }
 }
+ */

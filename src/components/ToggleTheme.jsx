@@ -23,13 +23,14 @@ export default function ToggleTheme() {
   }, [gettheme]);
 
   return (
-    <FontAwesomeIcon
-      size="xl"
-      icon={gettheme === "dark" ? faSun : faMoon}
-      color={gettheme === "dark" ? "#e0e7e9" : "#3f4c4d"}
-      onClick={() =>
-        settheme((prevtheme) => (prevtheme === "dark" ? "light" : "dark"))
-      }
-    />
+    <div>
+      <FontAwesomeIcon
+        size="xl"
+        icon={gettheme === "dark" ? faSun : faMoon}
+        onClick={() =>
+          settheme((prevtheme) => (prevtheme === "dark" ? "light" : "dark"))
+        }
+      />
+    </div>
   );
 }

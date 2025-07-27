@@ -14,13 +14,14 @@ export default function CreateToDo({ addtodo }) {
       {/* NOTE header with btn to create a new todo */}
       <header className={style.header}>
         <h1>My Tasks</h1>
-        <ToggleTheme />
-        <FontAwesomeIcon
-          icon={create ? faXmark : faPlus}
-          size="xl"
-          onClick={() => changecreate((prev) => !prev)}
-          color="#d85757"
-        />
+        <ToggleTheme style={style} />
+        <div className={style.add}>
+          <FontAwesomeIcon
+            icon={create ? faXmark : faPlus}
+            size="xl"
+            onClick={() => changecreate((prev) => !prev)}
+          />
+        </div>
       </header>
 
       {/* NOTE create a new todo */}
