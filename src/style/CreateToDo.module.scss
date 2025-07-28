@@ -45,14 +45,15 @@ header {
   div {
     margin-top: 0.75rem;
     width: 100%;
+    gap: 0.25rem;
     display: grid;
     grid-template-columns: 1fr 70px;
-    gap: 0.25rem;
 
     input,
     button {
       padding: 0.5rem;
       border-radius: 0.5rem;
+      width: 100%;
     }
 
     button {
