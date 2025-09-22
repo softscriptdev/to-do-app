@@ -5,7 +5,7 @@ import { useState } from "react";
 import CreateNewToDo from "./CreateNewToDo";
 import ToggleTheme from "./ToggleTheme";
 
-export default function CreateToDo({ addtodo }) {
+export default function CreateToDo() {
   /* NOTE state to show or hide create todo */
   const [create, changecreate] = useState(false);
 
@@ -28,7 +28,6 @@ export default function CreateToDo({ addtodo }) {
         {create && (
           <CreateNewToDo
             style={style.creattodo}
-            addtodo={addtodo}
             changecreate={changecreate}
             create
           />
