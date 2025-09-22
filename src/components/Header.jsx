@@ -4,13 +4,14 @@ import { faPlus, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import CreateNewToDo from "./CreateNewToDo";
 import ToggleTheme from "./ToggleTheme";
+import {  ThemeHandler } from "../hooks/ThemeHandler";
 
 export default function CreateToDo() {
   /* NOTE state to show or hide create todo */
   const [create, changecreate] = useState(false);
 
   return (
-    <>
+    <ThemeHandler>
       {/* NOTE header with btn to create a new todo */}
       <header className={style.header}>
         <section>
@@ -33,6 +34,6 @@ export default function CreateToDo() {
           />
         )}
       </header>
-    </>
+    </ThemeHandler>
   );
 }
