@@ -8,16 +8,6 @@ export default function CreateNewToDo({ style, create, changecreate }) {
   /* NOTE current To Do in the input to create a new todo */
   const [newtodo, changetodo] = useState(null);
 
-  /* NOTE check current to do and add it to the todo list */
-  const checknewtodo = () => {
-    let todo = newtodo?.trim();
-    if (todo) {
-      addtodo(todo);
-      changetodo(null);
-      changecreate(false);
-    }
-  };
-
   /* NOTE inital focus on the input to create a new todo */
   const inputref = useRef(null);
 
@@ -27,6 +17,16 @@ export default function CreateNewToDo({ style, create, changecreate }) {
       inputref.current.focus();
     }
   }, [create]);
+
+  /* NOTE check current to do and add it to the todo list */
+  const checknewtodo = () => {
+    let todo = newtodo?.trim();
+    if (todo) {
+      addtodo(todo);
+      changetodo(null);
+      changecreate(false);
+    }
+  };
 
   return (
     <div className={style}>

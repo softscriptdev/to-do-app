@@ -3,12 +3,6 @@ import { createContext, useEffect, useState } from "react";
 export const ThemeContext = createContext();
 
 export const ThemeHandler = ({ children }) => {
-  /* NOTE set body to theme */
-  const setbodytheme = (theme) => {
-    document.body.classList?.add(theme == "light" ? "light" : "dark");
-    document.body.classList?.remove(theme == "light" ? "dark" : "light");
-  };
-
   /* NOTE get theme from local storage and set state */
   const [gettheme, settheme] = useState(() => {
     let theme = localStorage.getItem("ToDoApp-Theme") || "dark";
@@ -22,11 +16,16 @@ export const ThemeHandler = ({ children }) => {
     setbodytheme(gettheme);
   }, [gettheme]);
 
+  /* NOTE set body to theme */
+  const setbodytheme = (theme) => {
+    document.body.classList?.add(theme == "light" ? "light" : "dark");
+    document.body.classList?.remove(theme == "light" ? "dark" : "light");
+  };
+
+  /* NOTE provide theme context */
   const theme = { gettheme, settheme };
 
   return (
-    <ThemeContext.Provider value={theme}>
-      {children}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={theme}>{children}</ThemeContext.Provider>
   );
 };
