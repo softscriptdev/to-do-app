@@ -1,30 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import style from "../style/todolist.module.scss";
-import {
-  faCheck,
-  faSquare,
-  faSquareCheck,
-  faTrash,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { useContext } from "react";
+import { ToDoContext } from "../hooks/ToDoHandler";
 
-export default function ShowToDo({ todos, setnewtodolist }) {
-  /* NOTE change done state */
-  const changedone = (index) => {
-    const newtodolist = [...todos];
-    newtodolist[index][1] = !newtodolist[index][1];
-    setnewtodolist(newtodolist);
-  };
-
-  /* NOTE delete to do with index */
-  const deltodo = (index) => {
-    const newtodolist = [...todos];
-    newtodolist.splice(index, 1);
-    setnewtodolist(newtodolist);
-  };
+export default function ShowToDo() {
+  /* NOTE get todos from context */
+  const { deltodo, changedone, gettodos } = useContext(ToDoContext);
 
   return (
     <article className={style.todolist}>
-      {todos.map(([todo, done], index) => (
+      {gettodos.map(([todo, done], index) => (
         <div key={index} className={done ? style.isdone : null}>
           <div
             onClick={() => changedone(index)}

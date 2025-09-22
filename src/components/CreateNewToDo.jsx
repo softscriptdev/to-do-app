@@ -1,11 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { ToDoContext } from "../hooks/ToDoHandler";
 
-export default function CreateNewToDo({
-  style,
-  create,
-  addtodo,
-  changecreate,
-}) {
+export default function CreateNewToDo({ style, create, changecreate }) {
+  /* NOTE  add todos to context */
+  const { addtodo } = useContext(ToDoContext);
+
   /* NOTE current To Do in the input to create a new todo */
   const [newtodo, changetodo] = useState(null);
 
@@ -37,10 +36,9 @@ export default function CreateNewToDo({
         placeholder="My new task ..."
         ref={inputref}
       />
-      <button
-       onClick={checknewtodo}
-       disabled={!newtodo}
-       >Add</button>
+      <button onClick={checknewtodo} disabled={!newtodo}>
+        Add
+      </button>
     </div>
   );
 }
