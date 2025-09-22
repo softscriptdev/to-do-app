@@ -4,11 +4,9 @@ export const ThemeContext = createContext();
 
 export const ThemeHandler = ({ children }) => {
   /* NOTE get theme from local storage and set state */
-  const [gettheme, settheme] = useState(() => {
-    let theme = localStorage.getItem("ToDoApp-Theme") || "dark";
-    setbodytheme(theme);
-    return theme;
-  });
+  const [gettheme, settheme] = useState(
+    () => localStorage.getItem("ToDoApp-Theme") || "dark"
+  );
 
   /* NOTE get theme from local storage */
   useEffect(() => {
