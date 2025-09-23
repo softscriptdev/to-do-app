@@ -1,7 +1,7 @@
 import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext } from "react";
-import { ThemeContext } from "../hooks/ThemeHandler";
+import { ThemeContext } from "../hooks/ThemeHandler.jsx";
 
 
 export default function ToggleTheme() {

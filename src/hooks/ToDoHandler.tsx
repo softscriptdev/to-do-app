@@ -1,10 +1,15 @@
 import { createContext, useEffect, useState } from "react";
+import type {
+  Todo,
+  ToDoContextType,
+  Todos,
+} from "../interfaces/InterfaceTodos.js";
 
-export const ToDoContext = createContext();
+export const ToDoContext = createContext<ToDoContextType | null>(null);
 
 export const ToDoHandler = ({ children }) => {
   /* NOTE set state for to dos | get to dos from local storage */
-  const [gettodos, addtodos] = useState(
+  const [gettodos, addtodos] = useState<Todos>(
     () => JSON.parse(localStorage.getItem("todos")) || []
   );
 
@@ -14,26 +19,26 @@ export const ToDoHandler = ({ children }) => {
   }, [gettodos]);
 
   /* NOTTE add to do to state */
-  const addtodo = (todo) => {
+  const addtodo = (todo: string) => {
     /* NOTE to do: [note, done] */
-    addtodos((prev) => [...prev, [todo, false]]);
+    addtodos((prev: Todos) => [...prev, { todo, done: false }]);
   };
 
   /* NOTE change done state */
-  const changedone = (index) => {
-    const newtodolist = [...gettodos];
+  const changedone = (index: number) => {
+    const newtodolist: Todos = { todos: [...gettodos.todos] };
     newtodolist[index][1] = !newtodolist[index][1];
     addtodos(newtodolist);
   };
 
   /* NOTE delete to do with index */
-  const deltodo = (index) => {
-    const newtodolist = [...gettodos];
-    newtodolist.splice(index, 1);
+  const deltodo = (index: number) => {
+    const newtodolist: Todos = { todos: [...gettodos.todos] };
+    newtodolist.todos.splice(index, 1);
     addtodos(newtodolist);
   };
 
-  const value = {
+  const value: ToDoContextType = {
     gettodos,
     addtodo,
     changedone,
